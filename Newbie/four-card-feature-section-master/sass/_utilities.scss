@@ -1,0 +1,14 @@
+@mixin flex-styles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin box-stuffs {
+  width: 350px;
+  height: 250px;
+  padding: 30px;
+  text-align: left;
+  position: relative;
+  border-radius: 5px;
+}

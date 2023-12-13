@@ -1,0 +1,132 @@
+@import "config";
+@import "utilities";
+@import "components";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: $font-size;
+}
+
+body {
+  .main-container {
+    @include flex-styles;
+    flex-direction: column;
+
+    .top-container {
+      margin-top: 40px;
+      width: 100%;
+      @include flex-styles;
+
+      .top-inner-container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        :nth-child(1) {
+          font-size: 34px;
+          font-weight: 200;
+          color: lighten($color: #000000, $amount: 40%);
+        }
+
+        :nth-child(2) {
+          font-size: 34px;
+          font-weight: 600;
+          color: lighten($color: #000000, $amount: 35%);
+        }
+
+        :nth-child(3) {
+          width: 40vw;
+          min-width: 350px;
+          p {
+            font-size: $font-size;
+            margin-top: 20px;
+            color: lighten($color: #000000, $amount: 70%);
+          }
+        }
+      }
+    }
+
+    .mid-container {
+      margin-top: 50px;
+
+      .parent {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+
+        .supervisor {
+          grid-area: 2 / 1 / 4 / 2;
+          border-top: 5px solid $Cyan;
+          box-shadow: 2px 10px 30px hsl(234, 12%, 90%),
+            -1px 10px 30px hsl(234, 12%, 90%);
+        }
+
+        .team-builder {
+          grid-area: 1 / 2 / 3 / 3;
+          border-top: 5px solid $Red;
+          box-shadow: 2px 10px 30px hsl(234, 12%, 90%),
+            -1px 10px 30px hsl(234, 12%, 90%);
+        }
+
+        .karma {
+          grid-area: 3 / 2 / 5 / 3;
+          border-top: 5px solid $Orange;
+          box-shadow: 2px 10px 30px hsl(234, 12%, 90%),
+            -1px 10px 30px hsl(234, 12%, 90%);
+        }
+
+        .calculator {
+          grid-area: 2 / 3 / 4 / 4;
+          border-top: 5px solid $Blue;
+          box-shadow: 2px 10px 30px hsl(234, 12%, 90%),
+            -1px 10px 30px hsl(234, 12%, 90%);
+        }
+
+        & > div {
+          @include box-stuffs;
+          .text-content {
+            width: 90%;
+            :nth-child(1) {
+              font-weight: 400;
+              font-size: 24px;
+              color: lighten($color: #000000, $amount: 40%);
+            }
+            :nth-child(2) {
+              padding-top: 10px;
+              color: lighten($color: #000000, $amount: 70%);
+            }
+          }
+          img {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 50 px;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    div {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    }
+  }
+}
